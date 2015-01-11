@@ -1,0 +1,9 @@
+*~
+dev/*
+vendor/*
+!vendor/.gitkeep
+unclean
+config.php
+behat
+
+tests/_output/*

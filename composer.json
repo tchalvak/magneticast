@@ -1,0 +1,9 @@
+{
+    "require": {
+        "silex/silex": "~1.2",
+        "behat/behat": "~3.0",
+        "phpunit/phpunit": "~4.4",
+        "codeception/codeception": "*",
+        "codeception/phpbuiltinserver": "*"
+    }
+}
