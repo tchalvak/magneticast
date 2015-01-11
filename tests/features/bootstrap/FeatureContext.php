@@ -22,6 +22,8 @@ require_once    ROOT.'vendor/autoload.php';
 require_once ROOT.'vendor/phpunit/phpunit/src/Framework/Assert/Functions.php';
 require_once ROOT.'tests/features/bootstrap/FeatureHelper.php';
 
+require_once ROOT.'core/core.php';
+
 /**
  * Defines application features from the specific context.
  */
@@ -189,15 +191,14 @@ class FeatureContext implements Context, SnippetAcceptingContext
 
 
 
-
-
-
     /**
      * @Given I am the wizard :arg1
      */
-    public function iAmTheWizard($arg1)
+    public function iAmTheWizard($wizard_name)
     {
-        throw new PendingException();
+        $wizard = WizardFactory::create($wizard_name);
+        assert($wizard instanceof Wizard);
+        assert($wizard->identity() === $wizard_name);
     }
 
     /**

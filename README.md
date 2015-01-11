@@ -12,6 +12,6 @@ Next, write tests in the /tests/unit/ directory or write BDD features in /featur
 Here is the current status of tests:
 
 Codeship says:
-[ ![Codeship Status for tchalvak/magneticast](https://www.codeship.io/projects/7c7b3800-3608-0132-36b5-4e1d56e5e814/status)](https://www.codeship.io/projects/41292)
+[ ![Codeship Status for tchalvak/magneticast](https://www.codeship.io/projects/6b907e20-7b4e-0132-13b1-76483e184fae/status)](https://www.codeship.io/projects/56242)
 
 [MOO]
