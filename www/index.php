@@ -29,6 +29,7 @@ $app->get('/hello/{name}', function ($name) use ($app) {
 
 // An even simpler display of the main page, complete with html in the php, ew!
 $app->get('/', function() use ($app){
+	// Obviously this is just an index placeholder for the main page, because the REST urls are being created first.
 	return '
 	<head>
 	</head>
