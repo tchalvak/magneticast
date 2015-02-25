@@ -9,6 +9,7 @@ class Account{
     public function email(){
         return $this->email;
     }
+
 }
 
 
@@ -33,5 +34,8 @@ class WizardFactory{
 
     // Get an existing wizard by id
     public static function id($id){
+    }
+
+    public static function accountCreate($email){
     }
 }
