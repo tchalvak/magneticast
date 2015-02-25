@@ -1,10 +1,12 @@
 Installation is easy:
 
 First, install composer:
-https://getcomposer.org/doc/00-intro.md
+
+    https://getcomposer.org/doc/00-intro.md
 
 Windows installation instructions are here: 
-https://getcomposer.org/doc/00-intro.md#installation-windows
+
+    https://getcomposer.org/doc/00-intro.md#installation-windows
 
 Then pull down the libraries used on the project:
 
@@ -14,7 +16,7 @@ OR
 
     composer install
 
-This will download/install a lot of parts for silex & phpunit to work.
+This will download & install the dependencies for silex, behat, and phpunit, etc, to work.
 
 
 Now, copy over /config.template.php to config.php:
@@ -22,6 +24,14 @@ Now, copy over /config.template.php to config.php:
     cp config.template.php config.php
 
 And edit the contents of config.php to match your specific application.
+
+
+You may also have to relax some of the permissions, FOR DEV ENV ONLY!
+
+   sudo chmod ugo+r www/images/
+   sudo chmod ug+w www/images/
+   sudo chmod ugo+r www/images/*
+   sudo chmod ugo+r www/favicon.ico
 
 Now just run the tests to make sure that you've got stuff working!
 
