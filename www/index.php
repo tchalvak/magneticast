@@ -13,6 +13,10 @@ use Symfony\Component\HttpFoundation\ParameterBag;
 //use App\ideas; // Use the shortcut for the idea class.
 //use App\ideas\IdeaFactory as IdeaFactory; // Use the shortcut for the ideafactory class.
 
+$app->register(new Silex\Provider\TwigServiceProvider(), array(
+    'twig.path' => ROOT.'core/views',
+));
+
 // This checks if a request is sending json, and decodes the json if possible
 $app->before(function (Request $request) {
     if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {
@@ -30,23 +34,7 @@ $app->get('/hello/{name}', function ($name) use ($app) {
 // An even simpler display of the main page, complete with html in the php, ew!
 $app->get('/', function() use ($app){
 	// Obviously this is just an index placeholder for the main page, because the REST urls are being created first.
-	return '
-	<head>
-	</head>
-	<body>
-		<h1>The Main Magneticast page!</h2>
-		<img src="images/cat.jpg">
-	</body>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-	<script src="js/mc.js"></script>
-	<script>
-	$(function(){
-		pullIdeas(); // Pull ideas from the api!
-		pullIdeaById(1, function(data){ // Pull the first idea and execute some callback upon it
-			console.log(data, data.phrase); // Just console log it for now.
-		}); 
-	});
-	</script>';
+	return $app['twig']->render('main.twig');
 });
 
 $app->get('/cast/{spell}', function($spell) use ($app) {
