@@ -2,6 +2,7 @@
     "require": {
         "php": ">=5.4.0",
         "silex/silex": "~1.2",
+        "twig/twig": "~1.18",
         "behat/behat": "~3.0",
         "phpunit/phpunit": "~4.4",
         "codeception/codeception": "*",
